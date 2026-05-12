@@ -18,11 +18,12 @@ function App() {
         setShowToast(false)
     }, 3000)
   }
-
+    
     const[errors, setErrors] = useState({
         name: 'This field is required',
         email: 'Please enter a valid email address',
     })
+    
 
   return (
     <>
@@ -31,13 +32,15 @@ function App() {
         <Form action="submit" onSubmit={handleToast}>
             <h1>Contact Us</h1>
             <ContainerInputsName>
-                <div>
+                <DivInput label="First Name" error={errors.name} type="text"/>
+                <DivInput label="Last Name" error={errors.name} type="text"/>
+                {/* <div>
                 
                     <label>
                         First Name <Span>*</Span>
                     </label>
                     <Input type="text" id="first-name"/>
-                    {/* <p>This field is required</p> */}
+                    <p>This field is required</p> 
                 </div>
 
                 <div>
@@ -45,8 +48,8 @@ function App() {
                         Last Name <Span>*</Span>
                     </label>
                     <Input type="text" id="last-name"/>
-                    {/* <p>This field is required</p> */}
-                </div>
+                    {/* <p>This field is required</p> 
+                </div>*/}
             </ContainerInputsName>
             
             
