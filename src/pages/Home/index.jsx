@@ -21,6 +21,7 @@ function App() {
   }
     const [name, setName] = useState('')
     const [lastName, setLastName] = useState('')
+    const [email, setEmail] = useState('')
     
     const[errors, setErrors] = useState({
         name: 'This field is required',
@@ -39,7 +40,7 @@ function App() {
     <>
         <Background>
 
-        <Form action="submit" onSubmit={handleSubmit}>
+        <Form noValidate action="submit" onSubmit={handleSubmit}>
             <h1>Contact Us</h1>
             <ContainerInputsName>
                 <DivInput label="First Name" error={errors.name} type="text" value={name} submitted={submitted} onChange={(e) => setName(e.target.value)}/>
@@ -63,15 +64,16 @@ function App() {
                 </div>*/}
             </ContainerInputsName>
             
-            
+            {/* <DivEmail label="Email Address"/> */}
+           
             <ContainerInputEmail>
-                
-                <label>
+                 <DivInput label="Email Addres" error={errors.email} type="email" value={email} submitted={submitted} onChange={(e) => setEmail(e.target.value)}/>
+                {/* <label>
                     Email Address <Span>*</Span>
                 </label>
                 <Input type="email" id="email"/>
                 {/* <p>Please enter a valid email address</p> */}
-                {/* This field is required */}
+                {/* This field is required */} 
                 
             </ContainerInputEmail>
            <ContainerInputRadio>

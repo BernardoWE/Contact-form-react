@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, {css}from "styled-components";
 
 
 export const colors = {
@@ -9,7 +9,7 @@ export const colors = {
     mediumGray:'hsl(186, 15%, 59%)',
     darkerGray:'hsl(187, 24%, 22%)'
 }
-export const InputSharedStyle = `
+export const InputSharedStyle = css`
     padding: 1rem;
     /* padding-block: 2rem; */
     outline: none;
@@ -92,7 +92,10 @@ export const Input = styled.input`
 `
 
 export const ContainerInputEmail = styled.div`
+div{
     ${ContainerSharedStyle};
+}
+    
 
 `
 
