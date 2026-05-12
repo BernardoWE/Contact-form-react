@@ -1,8 +1,9 @@
 
 import { Span } from '../pages/Home/styles'
 import { Input } from './styles'
-function DivInput({ label, error, ...props }) {
-
+function DivInput({ label, error, submitted, ...props }) {
+ 
+  
   return (
 
     <div>
@@ -11,7 +12,8 @@ function DivInput({ label, error, ...props }) {
 
       <Input {...props} value={props.value} onChange={props.onChange} />
 
-      {error && <span>{error}</span>}
+      {/* {error && <span>{error}</span>} */}
+      {submitted && !props.value ? <span>{error}</span> : null}
 
     </div>
 

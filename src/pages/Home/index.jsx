@@ -6,37 +6,45 @@ import DivInput from '../../components/input';
 
 function App() {
 
-
+    
     const [showToast, setShowToast] = useState(false)
-
     function handleToast(e) {
      e.preventDefault()
-
+   
+        
+    console.log(name)
     setShowToast(true)
 
     setTimeout(() => {
         setShowToast(false)
     }, 3000)
   }
+    const [name, setName] = useState('')
+    const [lastName, setLastName] = useState('')
     
     const[errors, setErrors] = useState({
         name: 'This field is required',
         email: 'Please enter a valid email address',
     })
-    const [name, setName] = useState('')
-    const [lastName, setLastName] = useState('')
-    console.log(name)
+    const [submitted, setSubmitted] = useState(false)
+
+    function handleSubmit(e){
+       
+        setSubmitted(true)
+         e.preventDefault()
+    }
+    
 
   return (
     <>
         <Background>
 
-        <Form action="submit" onSubmit={handleToast}>
+        <Form action="submit" onSubmit={handleSubmit}>
             <h1>Contact Us</h1>
             <ContainerInputsName>
-                <DivInput label="First Name" error={errors.name} type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+                <DivInput label="First Name" error={errors.name} type="text" value={name} submitted={submitted} onChange={(e) => setName(e.target.value)}/>
 
-                <DivInput label="Last Name" error={errors.name} type="text" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
+                <DivInput label="Last Name" error={errors.name} type="text" value={lastName} submitted={submitted} onChange={(e) => setLastName(e.target.value)}/>
                 {/* <div>
                 
                     <label>
@@ -57,12 +65,14 @@ function App() {
             
             
             <ContainerInputEmail>
+                
                 <label>
                     Email Address <Span>*</Span>
                 </label>
                 <Input type="email" id="email"/>
                 {/* <p>Please enter a valid email address</p> */}
                 {/* This field is required */}
+                
             </ContainerInputEmail>
            <ContainerInputRadio>
 
