@@ -2,7 +2,7 @@ import { useState } from 'react'
 import '../../App.css'
 import { Background, Form, ContainerInputsName, Input, ContainerInputEmail, Span, ContainerInputRadio, TextArea, ContainerInputTextArea, ContainerInputCheckbox, Button, Toast } from './styles'
 import img from "../../assets/images/icon-success-check.svg";
-import DivInput from '../../components/input';
+import DivInput from '../../components/DivInput/input';
 
 function App() {
 
@@ -46,34 +46,14 @@ function App() {
                 <DivInput label="First Name" error={errors.name} type="text" value={name} submitted={submitted} onChange={(e) => setName(e.target.value)}/>
 
                 <DivInput label="Last Name" error={errors.name} type="text" value={lastName} submitted={submitted} onChange={(e) => setLastName(e.target.value)}/>
-                {/* <div>
-                
-                    <label>
-                        First Name <Span>*</Span>
-                    </label>
-                    <Input type="text" id="first-name"/>
-                    <p>This field is required</p> 
-                </div>
-
-                <div>
-                    <label>
-                        Last Name <Span>*</Span>
-                    </label>
-                    <Input type="text" id="last-name"/>
-                    {/* <p>This field is required</p> 
-                </div>*/}
+               
             </ContainerInputsName>
             
-            {/* <DivEmail label="Email Address"/> */}
+            
            
             <ContainerInputEmail>
                  <DivInput label="Email Addres" error={errors.email} type="email" value={email} submitted={submitted} onChange={(e) => setEmail(e.target.value)}/>
-                {/* <label>
-                    Email Address <Span>*</Span>
-                </label>
-                <Input type="email" id="email"/>
-                {/* <p>Please enter a valid email address</p> */}
-                {/* This field is required */} 
+                
                 
             </ContainerInputEmail>
            <ContainerInputRadio>

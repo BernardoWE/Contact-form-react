@@ -1,5 +1,5 @@
 
-import { Span } from '../pages/Home/styles'
+import { Span } from '../../pages/Home/styles'
 import { Input } from './styles'
 function DivInput({ label, error, submitted, ...props }) {
  

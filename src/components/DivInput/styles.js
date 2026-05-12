@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {colors} from '../../src/pages/Home/styles'
+import {colors} from '../../pages/Home/styles'
 
 export const Input = styled.input`
     
