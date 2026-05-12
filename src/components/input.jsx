@@ -9,7 +9,7 @@ function DivInput({ label, error, ...props }) {
 
       <label>{label} <Span>*</Span></label>
 
-      <Input {...props} />
+      <Input {...props} value={props.value} onChange={props.onChange} />
 
       {error && <span>{error}</span>}
 

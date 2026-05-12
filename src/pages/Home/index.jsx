@@ -23,7 +23,9 @@ function App() {
         name: 'This field is required',
         email: 'Please enter a valid email address',
     })
-    
+    const [name, setName] = useState('')
+    const [lastName, setLastName] = useState('')
+    console.log(name)
 
   return (
     <>
@@ -32,8 +34,9 @@ function App() {
         <Form action="submit" onSubmit={handleToast}>
             <h1>Contact Us</h1>
             <ContainerInputsName>
-                <DivInput label="First Name" error={errors.name} type="text"/>
-                <DivInput label="Last Name" error={errors.name} type="text"/>
+                <DivInput label="First Name" error={errors.name} type="text" value={name} onChange={(e) => setName(e.target.value)}/>
+
+                <DivInput label="Last Name" error={errors.name} type="text" value={lastName} onChange={(e) => setLastName(e.target.value)}/>
                 {/* <div>
                 
                     <label>
