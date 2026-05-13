@@ -9,9 +9,7 @@ function App() {
 
     
     const [showToast, setShowToast] = useState(false)
-    function handleToast(e) {
-
-     e.preventDefault()
+    function handleToast() {
 
     console.log(name)
     setShowToast(true)
@@ -35,9 +33,12 @@ function App() {
        
         setSubmitted(true)
          e.preventDefault()
+         if (name && lastName && email && textMessage ) {
+            handleToast()
+         }
+         
     }
     
-
   return (
     <>
         <Background>
