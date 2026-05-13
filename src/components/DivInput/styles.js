@@ -17,5 +17,6 @@ export const Input = styled.input`
     &:focus{
         outline: 1px solid ${colors.mediumGreen};
     }
+    outline: ${props => props.$submitted && props.value === "" ? "1px solid red" : null};
    
 `

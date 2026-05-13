@@ -7,9 +7,9 @@ import { Span } from '../../pages/Home/styles'
         <label>
             {label} <Span>*</Span>
         </label>
-        <TextArea {...props}></TextArea>
-        {submitted && !props.value ? <span>{error}</span> : null}
-        {/* <p>This field is required</p> */}
+        <TextArea $submitted={submitted} {...props} ></TextArea>
+        {submitted && !props.value ? <span className='span-error'>{error}</span> : null}
+        
     </div>
     )
 }

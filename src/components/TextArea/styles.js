@@ -8,6 +8,7 @@ export const TextArea = styled.textarea`
         border: 1px solid;
         border-radius: 10px;
         margin-top: 0.5rem;
+        /* border: none; */
         /* border: 1px solid #ccc; */
         /* transition: outline .5s ease; */
          &:hover{
@@ -16,6 +17,8 @@ export const TextArea = styled.textarea`
         &:focus{
             outline: 1px solid ${colors.mediumGreen};
         }
+        outline: ${props => props.$submitted && props.value === "" ? "1px solid red" : null};
+        
     resize: none;
 
 `

@@ -79,16 +79,22 @@ function App() {
             </ContainerInputRadio>
 
             <ContainerInputTextArea>
-                <DivTextArea value={textMessage} onChange={(e) => setTextMessage(e.target.value)} error={errors.name} submitted={submitted} label="Message" id="message" rows="5" placeholder="Type your message here..."/>
-                {/* <label>
-                    Message <Span>*</Span>
-                </label>
-                <TextArea id="message" rows="5" placeholder="Type your message here..."></TextArea> */}
-                {/* <p>This field is required</p> */}
+                <DivTextArea 
+                value={textMessage} 
+                submitted={submitted}
+                onChange={(e) => setTextMessage(e.target.value)} 
+                error={errors.name} 
+                submitted={submitted} 
+                label="Message" 
+                id="message" 
+                rows="5" 
+                placeholder="Type your message here..." 
+                />
+                
             </ContainerInputTextArea>
 
             <ContainerInputCheckbox>
-                <input type="checkbox" id="consent"/> 
+                <input type="checkbox" id="consent" /> 
                 <label htmlFor="consent">
                     I consent to being contacted by the team <Span>*</Span>
                 </label>
