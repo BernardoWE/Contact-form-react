@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import '../../App.css'
-import { Background, Form, ContainerInputsName, Input, ContainerInputEmail, Span, ContainerInputRadio, TextArea, ContainerInputTextArea, ContainerInputCheckbox, Button, Toast } from './styles'
+import { Background, Form, ContainerInputsName, Input, ContainerInputEmail, Span, ContainerInputRadio,ContainerInputTextArea, ContainerInputCheckbox, Button, Toast } from './styles'
 import img from "../../assets/images/icon-success-check.svg";
 import DivInput from '../../components/DivInput/input';
+import DivTextArea from '../../components/TextArea/index';
 
 function App() {
 
@@ -52,10 +53,12 @@ function App() {
             
            
             <ContainerInputEmail>
-                 <DivInput label="Email Addres" error={errors.email} type="email" value={email} submitted={submitted} onChange={(e) => setEmail(e.target.value)}/>
+                 
+                <DivInput label="Email Addres" error={errors.email} type="email" value={email} submitted={submitted} onChange={(e) => setEmail(e.target.value)}/>
                 
                 
             </ContainerInputEmail>
+
            <ContainerInputRadio>
 
                 <label>
@@ -75,10 +78,11 @@ function App() {
             </ContainerInputRadio>
 
             <ContainerInputTextArea>
-                <label>
+                <DivTextArea/>
+                {/* <label>
                     Message <Span>*</Span>
                 </label>
-                <TextArea id="message" rows="5" placeholder="Type your message here..."></TextArea>
+                <TextArea id="message" rows="5" placeholder="Type your message here..."></TextArea> */}
                 {/* <p>This field is required</p> */}
             </ContainerInputTextArea>
 

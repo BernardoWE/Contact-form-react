@@ -102,14 +102,13 @@ div{
 export const Span = styled.span`
     color: ${colors.mediumGreen};
 `
-export const TextArea = styled.textarea`
-    ${InputSharedStyle};
-    resize: none;
 
-    `
 
 export const ContainerInputTextArea = styled.div`
-    ${ContainerSharedStyle};
+    div{
+        ${ContainerSharedStyle};
+    }
+    
 `
 
 export const ContainerInputCheckbox = styled.div`
