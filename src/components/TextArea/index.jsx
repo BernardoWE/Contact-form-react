@@ -1,13 +1,14 @@
 import {TextArea} from "./styles";
 import { Span } from '../../pages/Home/styles'
- function DivTextArea(){
-    
+ function DivTextArea({label,submitted, error, ...props}){
+
     return (
     <div>
         <label>
-            Message <Span>*</Span>
+            {label} <Span>*</Span>
         </label>
-        <TextArea id="message" rows="5" placeholder="Type your message here..."></TextArea>
+        <TextArea {...props}></TextArea>
+        {submitted && !props.value ? <span>{error}</span> : null}
         {/* <p>This field is required</p> */}
     </div>
     )

@@ -10,9 +10,9 @@ function App() {
     
     const [showToast, setShowToast] = useState(false)
     function handleToast(e) {
+
      e.preventDefault()
-   
-        
+
     console.log(name)
     setShowToast(true)
 
@@ -23,6 +23,7 @@ function App() {
     const [name, setName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
+    const [textMessage, setTextMessage ] = useState('')
     
     const[errors, setErrors] = useState({
         name: 'This field is required',
@@ -78,7 +79,7 @@ function App() {
             </ContainerInputRadio>
 
             <ContainerInputTextArea>
-                <DivTextArea/>
+                <DivTextArea value={textMessage} onChange={(e) => setTextMessage(e.target.value)} error={errors.name} submitted={submitted} label="Message" id="message" rows="5" placeholder="Type your message here..."/>
                 {/* <label>
                     Message <Span>*</Span>
                 </label>
