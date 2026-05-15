@@ -7,7 +7,7 @@ function DivQueryInput( {error, submitted, value, type, onChange, id,name,p, ...
     return (
         <div>
             <label {...props}>
-                <input  onChange={onChange} type={type} id={id} name={name} value={value}/>
+                <input onChange={onChange} type={type} id={id} name={name} value={value}/>
                 <p>{p}</p>
                 
             </label>

@@ -1,7 +1,7 @@
 
 import { Span } from '../../pages/Home/styles'
 import { Input } from './styles'
-function DivInput({ label, error, submitted, ...props }) {
+function DivInput({ label, error, submitted,value, ...props }) {
  
   
   return (
@@ -10,10 +10,10 @@ function DivInput({ label, error, submitted, ...props }) {
 
       <label>{label} <Span>*</Span></label>
 
-      <Input $submitted={submitted} {...props} value={props.value} onChange={props.onChange} />
+      <Input $submitted={submitted} {...props} />
 
       
-      {submitted && !props.value ? <span className='span-error' >{error}</span> : null}
+      {submitted && !value ? <span className='span-error' >{error}</span> : null}
 
     </div>
 

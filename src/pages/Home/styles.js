@@ -45,7 +45,6 @@ export const Form = styled.form`
     background-color: ${colors.white};
     padding: 2rem;
     border-radius: 8px;
-    /* width: 100%; */
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -84,11 +83,15 @@ export const ContainerInputRadio = styled.div`
         
     };
     /* DivQueryInput{} */
-    section {
+    section{
         display: flex;
         gap: 10px;
-        /* flex-grow:1; */
+        flex-grow:1;
         /* justify-content: end; */
+    }
+
+    div{
+        width: 100%;
     }
     label{
         width: 100%;
