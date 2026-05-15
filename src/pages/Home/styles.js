@@ -1,5 +1,5 @@
 import styled, {css}from "styled-components";
-
+// import DivQueryInput from "../../components/QueryInput/index"
 
 export const colors = {
     lightGreen: 'hsl(148, 38%, 91%)',
@@ -16,8 +16,7 @@ export const InputSharedStyle = css`
     border: 1px solid;
     border-radius: 10px;
     margin-top: 0.5rem;
-    /* border: 1px solid #ccc; */
-    /* transition: outline .5s ease; */
+    
      &:hover{
         outline: 1px solid ${colors.mediumGreen};
     }
@@ -50,20 +49,12 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    .radio-option{
-        ${InputSharedStyle}
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        cursor: pointer;
-        input{
-            cursor: pointer;
-        }
-        
-    };
+    
     .span-error{
             color: red;
+            /* margin-bottom: 220px; */
             margin-top: 5px;
+            
         }
     /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 `
@@ -80,15 +71,29 @@ export const ContainerInputsName = styled.div`
 `
 export const ContainerInputRadio = styled.div`
 
-    
-    div{
+    .radio-option{
+        ${InputSharedStyle}
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        input{
+            cursor: pointer;
+        }
+        
+        
+    };
+    /* DivQueryInput{} */
+    section {
         display: flex;
         gap: 10px;
+        /* flex-grow:1; */
+        /* justify-content: end; */
     }
     label{
         width: 100%;
     }
-    `
+`
 
 export const Input = styled.input`
     

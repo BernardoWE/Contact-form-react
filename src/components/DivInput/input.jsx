@@ -12,8 +12,8 @@ function DivInput({ label, error, submitted, ...props }) {
 
       <Input $submitted={submitted} {...props} value={props.value} onChange={props.onChange} />
 
-      {/* {error && <span>{error}</span>} */}
-      {submitted && !props.value ? <span className='span-error'>{error}</span> : null}
+      
+      {submitted && !props.value ? <span className='span-error' >{error}</span> : null}
 
     </div>
 
