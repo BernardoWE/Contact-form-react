@@ -1,17 +1,25 @@
 // import { QueryInput } from "./styles";
 
+import { QueryLabel } from "./styles"
 
 
-function DivQueryInput( {error, submitted, value, type, onChange, id,name,p, ...props}) {
+
+function DivQueryInput( {checked, error, submitted, value, type, onChange, id,name,p, ...props}) {
     
+    
+   
+
     return (
         <div>
-            <label {...props}>
-                <input onChange={onChange} type={type} id={id} name={name} value={value}/>
+            <QueryLabel
+            {...props}
+            $submitted={submitted}
+            $checked={checked} >
+                <input onChange={onChange} type={type} id={id} name={name} value={value} checked={checked}/>
                 <p>{p}</p>
                 
-            </label>
-            {submitted && !value ? <span className='span-error'>{error}</span> : null}
+            </QueryLabel>
+            
         </div>
         
     )

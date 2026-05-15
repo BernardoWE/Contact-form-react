@@ -23,12 +23,12 @@ function App() {
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
     const [textMessage, setTextMessage ] = useState('')
-    const [query, setQuery] = useState()
+    const [query, setQuery] = useState('')
     
     const[errors, setErrors] = useState({
         name: 'This field is required',
         email: 'Please enter a valid email address',
-        query: 'Please select a query type'
+        
     })
     const [submitted, setSubmitted] = useState(false)
 
@@ -73,9 +73,12 @@ function App() {
                 <section >
                     <DivQueryInput
                     submitted={submitted}
-                    error={errors.query}
+                    
                     type="radio"
-                    value={query}
+                    value="general-enquiry"
+
+                    checked={query === "general-enquiry"}
+                    
                     onChange= {(e) => setQuery(e.target.value) }
                     id="general-enquiry" 
                     name="query-type"
@@ -87,7 +90,8 @@ function App() {
                     <DivQueryInput
                      submitted={submitted}
                     type="radio"
-                    value="query"
+                    value="support-request"
+                    checked={query === "support-request"}
                     onChange= {(e) => setQuery(e.target.value) }
                     id="support-request" 
                     name="query-type"
@@ -95,6 +99,8 @@ function App() {
                     className='radio-option'
                     p="Support Request"
                     />
+                    </section>
+                    {submitted && !query ? <span className='span-error'>Please select a query type</span> : null}
                    
                     {/* <label htmlFor="general-enquiry" className='radio-option'>
                         <input type="radio" id="general-enquiry" name="query-type"/> 
@@ -105,7 +111,7 @@ function App() {
                         <p>Support Request</p>
                     </label> */}
                     {/* <p>Please select a query type</p> */}
-                </section>
+                
             </ContainerInputRadio>
 
             <ContainerInputTextArea>

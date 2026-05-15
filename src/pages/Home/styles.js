@@ -48,7 +48,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    
+    width:clamp(320px, 50vw, 700px);
     .span-error{
             color: red;
             /* margin-bottom: 220px; */
@@ -69,7 +69,7 @@ export const ContainerInputsName = styled.div`
 
 `
 export const ContainerInputRadio = styled.div`
-
+    
     .radio-option{
         ${InputSharedStyle}
         display: flex;
@@ -82,20 +82,19 @@ export const ContainerInputRadio = styled.div`
         
         
     };
-    /* DivQueryInput{} */
+ .span-error{
+   /* grid-column: 1 / -1; */
+   display: block;
+}
     section{
-        display: flex;
-        gap: 10px;
-        flex-grow:1;
-        /* justify-content: end; */
+     
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+         gap: 10px;
+        
     }
 
-    div{
-        width: 100%;
-    }
-    label{
-        width: 100%;
-    }
+  
 `
 
 export const Input = styled.input`
