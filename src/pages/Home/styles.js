@@ -48,7 +48,7 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     gap: 30px;
-    width:clamp(320px, 50vw, 700px);
+    width: clamp(320px, 50vw, 700px);
     .span-error{
             color: red;
             /* margin-bottom: 220px; */
@@ -60,11 +60,13 @@ export const Form = styled.form`
 export const ContainerInputsName = styled.div`
     display: flex;
     gap: 10px;
-    
+    flex-wrap: wrap;
+
     div{
         display: flex;
         flex-direction: column;
-        width: 100%;
+        flex: 1 1 ;
+        
     }
 
 `
@@ -87,9 +89,9 @@ export const ContainerInputRadio = styled.div`
    display: block;
 }
     section{
-     
+
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
          gap: 10px;
         
     }
@@ -97,11 +99,7 @@ export const ContainerInputRadio = styled.div`
   
 `
 
-export const Input = styled.input`
-    
-    ${InputSharedStyle};
-   
-`
+
 
 export const ContainerInputEmail = styled.div`
 div{

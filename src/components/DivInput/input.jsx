@@ -10,7 +10,7 @@ function DivInput({ label, error, submitted,value, ...props }) {
 
       <label>{label} <Span>*</Span></label>
 
-      <Input $submitted={submitted} {...props} />
+      <Input $submitted={submitted} value={value} {...props} />
 
       
       {submitted && !value ? <span className='span-error' >{error}</span> : null}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import '../../App.css'
-import { Background, Form, ContainerInputsName, Input, ContainerInputEmail, Span, ContainerInputRadio,ContainerInputTextArea, ContainerInputCheckbox, Button, Toast } from './styles'
+import { Background, Form, ContainerInputsName, ContainerInputEmail, Span, ContainerInputRadio,ContainerInputTextArea, ContainerInputCheckbox, Button, Toast } from './styles'
 import img from "../../assets/images/icon-success-check.svg";
 import DivInput from '../../components/DivInput/input';
 import DivTextArea from '../../components/TextArea/index';
@@ -73,7 +73,6 @@ function App() {
                 <section >
                     <DivQueryInput
                     submitted={submitted}
-                    
                     type="radio"
                     value="general-enquiry"
 
