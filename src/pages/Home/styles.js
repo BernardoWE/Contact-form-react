@@ -127,9 +127,13 @@ export const ContainerInputTextArea = styled.div`
 
 export const ContainerInputCheckbox = styled.div`
     ${ContainerSharedStyle};
-    flex-direction: row;
+    /* flex-direction: row; */
     /* justify-content: center; */
-    gap: 10px;
+    /* gap: 10px; */
+    div{
+        display: flex;
+        gap: 10px;
+    }
     label{
         cursor: pointer ;
     }

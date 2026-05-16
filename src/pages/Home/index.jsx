@@ -12,7 +12,7 @@ function App() {
     const [showToast, setShowToast] = useState(false)
     function handleToast() {
 
-    console.log(name)
+    
     setShowToast(true)
 
     setTimeout(() => {
@@ -24,6 +24,7 @@ function App() {
     const [email, setEmail] = useState('')
     const [textMessage, setTextMessage ] = useState('')
     const [query, setQuery] = useState('')
+    const [consent, setConsent] = useState(false)
     
     const[errors, setErrors] = useState({
         name: 'This field is required',
@@ -36,11 +37,31 @@ function App() {
        setSubmitted(true)
         
          e.preventDefault()
-         if (name && lastName && email && textMessage && query ) {
+         if (name && lastName && email && textMessage && query && consent) {
             handleToast()
             
          }
-         
+         const isValid =
+         name.trim() &&
+         lastName.trim() &&
+         email.trim()&&
+         query &&
+         textMessage.trim()&&
+         consent
+         if(isValid){
+            setName('')
+            setLastName('')
+            setEmail('')
+            setQuery('')
+            setTextMessage('')
+            setConsent(false)
+            
+            
+            setSubmitted(false)
+            console.log("Form enviado")
+         }else{
+            setSubmitted(true)
+         }
     }
     
   return (
@@ -134,13 +155,16 @@ function App() {
             </ContainerInputTextArea>
 
             <ContainerInputCheckbox>
-                <input type="checkbox" id="consent" /> 
-                <label htmlFor="consent">
-                    I consent to being contacted by the team <Span>*</Span>
-                </label>
-                 {/* <p>To submit this form, please consent to being contacted</p> */}
-            </ContainerInputCheckbox>
+                <div>
+                    <input type="checkbox" id="consent" checked={consent} onChange={(e) => setConsent(e.target.checked)} />
+                    <label htmlFor="consent">
+                        I consent to being contacted by the team <Span>*</Span>
+                    </label>
+                </div>
+                 {submitted && !consent ? <span className='span-error'>To submit this form, please consent to being contacted</span> : null}
 
+            </ContainerInputCheckbox>
+            
             <Button type='submit' >
                 Submit
             </Button>
