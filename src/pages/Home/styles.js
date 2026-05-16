@@ -71,7 +71,11 @@ export const ContainerInputsName = styled.div`
 
 `
 export const ContainerInputRadio = styled.div`
-    
+   
+
+.radio-option.error{
+   outline: 1px solid red;
+}
     .radio-option{
         ${InputSharedStyle}
         display: flex;

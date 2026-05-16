@@ -71,33 +71,38 @@ function App() {
                     Query Type <Span>*</Span>
                 </p> 
                 <section >
-                    <DivQueryInput
-                    submitted={submitted}
-                    type="radio"
-                    value="general-enquiry"
-
-                    checked={query === "general-enquiry"}
+                            <label  className={submitted && !query
+                                ? "radio-option error"
+                                : "radio-option"} htmlFor="general-enquiry">
+                                <input 
+                                type="radio"
+                                value="general-enquiry"
+                                checked={query === "general-enquiry"}
+                                onChange={(e) => setQuery(e.target.value)}
+                                name="query-type"
+                                id="general-enquiry"
+                                />
+                                <p>General Enquiry</p>
+                                
+                            </label>
+                              <label  className={submitted && !query
+                                ? "radio-option error"
+                                : "radio-option"} htmlFor="support-enquiry">
+                                <input 
+                                type="radio"
+                                value="support-enquiry"
+                                checked={query === "support-enquiry"}
+                                onChange={(e) => setQuery(e.target.value)}
+                                name="query-type"
+                                id="support-enquiry"
+                                />
+                                <p>Support Request</p>
+                                
+                            </label>
+                            
+                       
+                
                     
-                    onChange= {(e) => setQuery(e.target.value) }
-                    id="general-enquiry" 
-                    name="query-type"
-                    htmlFor="general-enquiry"
-                    className='radio-option'
-                    p="General Enquiry"
-                    
-                    />
-                    <DivQueryInput
-                     submitted={submitted}
-                    type="radio"
-                    value="support-request"
-                    checked={query === "support-request"}
-                    onChange= {(e) => setQuery(e.target.value) }
-                    id="support-request" 
-                    name="query-type"
-                    htmlFor="support-request"
-                    className='radio-option'
-                    p="Support Request"
-                    />
                     </section>
                     {submitted && !query ? <span className='span-error'>Please select a query type</span> : null}
                    
