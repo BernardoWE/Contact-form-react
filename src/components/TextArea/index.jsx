@@ -8,7 +8,8 @@ import { Span } from '../../pages/Home/styles'
             {label} <Span>*</Span>
         </label>
         <TextArea $submitted={submitted} {...props} ></TextArea>
-        {submitted && !props.value ? <span className='span-error'>{error}</span> : null}
+        <span className='span-error'>{error}</span>
+        
         
     </div>
     )

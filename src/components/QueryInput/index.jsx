@@ -4,7 +4,7 @@ import { QueryLabel } from "./styles"
 
 
 
-function DivQueryInput( {checked, error, submitted, value, type, onChange, id,name,p, ...props}) {
+function DivQueryInput( {checked, submitted, value, type, onChange, id,name,p, ...props}) {
     
     
    

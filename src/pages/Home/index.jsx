@@ -33,32 +33,58 @@ function App() {
     const [textMessage, setTextMessage ] = useState('')
     const [query, setQuery] = useState('')
     const [consent, setConsent] = useState(false)
-    
-    const[errors, setErrors] = useState({
+    const [errors, setErrors] = useState({})
+    /* const[errors, setErrors] = useState({
         name: 'This field is required',
         email: 'Please enter a valid email address',
         
-    })
+    }) */
     const [submitted, setSubmitted] = useState(false)
 
     function handleSubmit(e){
        setSubmitted(true)
         
          e.preventDefault()
-         if (name && lastName && email && textMessage && query && consent && validarEmail(email)) {
-            handleToast()
-            
-         }
-         const isValid =
-         name.trim() &&
-         lastName.trim() &&
-         email.trim()&&
-         query &&
-         textMessage.trim()&&
-         consent
+        let newErrors = {}
+
+   // validações
+   if (name.trim() === "") {
+      newErrors.name = "This field is required"
+   }
+
+   if (lastName.trim() === "") {
+      newErrors.lastName = "This field is required"
+   }
+
+   if (email.trim() === "") {
+      newErrors.email = "This field is required"
+   } else if (!validarEmail(email)) {
+      newErrors.email = "Invalid email"
+   }
+
+   if (textMessage.trim() === "") {
+      newErrors.textMessage = "This field is required"
+   }
+
+   if (!query) {
+      newErrors.query = "Please select a query type"
+   }
+
+   if (!consent) {
+      newErrors.consent = "To submit this form, please consent to being contacted"
+   }
+
+   // salva erros
+   setErrors(newErrors)
+
+
+        
+         const isValid = Object.keys(newErrors).length === 0
+        
 
          
-         if(isValid && validarEmail(email)){
+         if(isValid){
+            handleToast()
             setName('')
             setLastName('')
             setEmail('')
@@ -83,7 +109,7 @@ function App() {
             <ContainerInputsName>
                 <DivInput label="First Name" error={errors.name} type="text" value={name} submitted={submitted} onChange={(e) => setName(e.target.value)}/>
 
-                <DivInput label="Last Name" error={errors.name} type="text" value={lastName} submitted={submitted} onChange={(e) => setLastName(e.target.value)}/>
+                <DivInput label="Last Name" error={errors.lastName} type="text" value={lastName} submitted={submitted} onChange={(e) => setLastName(e.target.value)}/>
                
             </ContainerInputsName>
             
@@ -135,7 +161,8 @@ function App() {
                 
                     
                     </section>
-                    {submitted && !query ? <span className='span-error'>Please select a query type</span> : null}
+                    <span className='span-error'>{errors.query}</span>
+                    
                    
                     {/* <label htmlFor="general-enquiry" className='radio-option'>
                         <input type="radio" id="general-enquiry" name="query-type"/> 
@@ -154,7 +181,7 @@ function App() {
                 value={textMessage} 
                 submitted={submitted}
                 onChange={(e) => setTextMessage(e.target.value)} 
-                error={errors.name} 
+                error={errors.textMessage} 
                 submitted={submitted} 
                 label="Message" 
                 id="message" 
@@ -171,7 +198,8 @@ function App() {
                         I consent to being contacted by the team <Span>*</Span>
                     </label>
                 </div>
-                 {submitted && !consent ? <span className='span-error'>To submit this form, please consent to being contacted</span> : null}
+                <span className='span-error'>{errors.consent}</span>
+              
 
             </ContainerInputCheckbox>
             
