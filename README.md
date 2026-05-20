@@ -1,6 +1,6 @@
 # 📧 Contact Form React
 
-Um formulário de contato moderno e responsivo construído com **React**, **Vite**, **Styled Components** e **Axios**. O projeto oferece validação de formulário em tempo real, feedback visual ao usuário e uma interface intuitiva.
+Um formulário de contato moderno e responsivo construído com **React**, **Vite** e **Styled Components**. O projeto oferece validação de formulário em tempo real, feedback visual ao usuário e notificações toast.
 
 ## 🎯 Características
 
@@ -10,7 +10,6 @@ Um formulário de contato moderno e responsivo construído com **React**, **Vite
 - 🎭 **Styled Components**: Estilização dinâmica e reutilizável
 - ⚡ **Vite**: Build rápido e desenvolvimento com HMR (Hot Module Replacement)
 - 📝 **Componentes Reutilizáveis**: Componentes isolados e bem estruturados
-- 🌐 **Integração com Axios**: Pronto para comunicação com APIs
 
 ## 📋 Campos do Formulário
 
@@ -28,7 +27,6 @@ Um formulário de contato moderno e responsivo construído com **React**, **Vite
 - **React 19.2.5** - Biblioteca JavaScript para UI
 - **Vite 8.0.10** - Build tool e dev server
 - **Styled Components 6.4.1** - CSS-in-JS para estilização
-- **Axios 1.15.2** - Cliente HTTP
 - **React Router DOM 7.14.2** - Roteamento (base instalada)
 - **ESLint 10.2.1** - Linter de código
 
@@ -135,30 +133,6 @@ O design é totalmente responsivo e se adapta a diferentes tamanhos de tela, de 
 4. Se validado, um toast de sucesso é mostrado
 5. O formulário é limpo automaticamente
 6. Toast desaparece após 3 segundos
-
-## 🌐 Integração com API
-
-O projeto está configurado com **Axios** para facilitar integração com APIs. Você pode adicionar chamadas HTTP no handler `handleSubmit` para enviar os dados para um servidor backend.
-
-Exemplo:
-```javascript
-if(isValid){
-  try {
-    await axios.post('/api/contact', {
-      name,
-      lastName,
-      email,
-      query,
-      textMessage,
-      consent
-    });
-    handleToast();
-    // ... limpar formulário
-  } catch (error) {
-    console.error('Erro ao enviar formulário:', error);
-  }
-}
-```
 
 ## 💡 Próximas Melhorias
 
