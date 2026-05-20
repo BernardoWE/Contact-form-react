@@ -22,6 +22,14 @@ function App() {
     const [name, setName] = useState('')
     const [lastName, setLastName] = useState('')
     const [email, setEmail] = useState('')
+     const validarEmail = emailRegex => {
+            let regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(emailRegex)
+            
+        }
+
+        
+        
     const [textMessage, setTextMessage ] = useState('')
     const [query, setQuery] = useState('')
     const [consent, setConsent] = useState(false)
@@ -37,7 +45,7 @@ function App() {
        setSubmitted(true)
         
          e.preventDefault()
-         if (name && lastName && email && textMessage && query && consent) {
+         if (name && lastName && email && textMessage && query && consent && validarEmail(email)) {
             handleToast()
             
          }
@@ -48,7 +56,9 @@ function App() {
          query &&
          textMessage.trim()&&
          consent
-         if(isValid){
+
+         
+         if(isValid && validarEmail(email)){
             setName('')
             setLastName('')
             setEmail('')
